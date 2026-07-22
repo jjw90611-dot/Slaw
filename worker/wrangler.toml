@@ -1,0 +1,25 @@
+name = "safety-law-api"
+main = "worker.js"
+compatibility_date = "2025-01-01"
+
+# D1 데이터베이스 (Q&A용)
+[[d1_databases]]
+binding = "DB"
+database_name = "safety-law-db"
+database_id = "여기는_나중에_채워요"
+
+# KV 네임스페이스 (방문자 카운트 + 캐시)
+[[kv_namespaces]]
+binding = "CACHE"
+id = "여기도_나중에_채워요"
+
+# 환경변수 (일반)
+[vars]
+CORS_ORIGIN = "*"
+
+# 시크릿 (API 키)은 대시보드에서 별도 등록:
+# - KAKAO_API_KEY
+# - NAVER_CLIENT_ID
+# - NAVER_CLIENT_SECRET
+# - KOSHA_API_KEY
+# - ADMIN_PASSWORD
