@@ -1,0 +1,24 @@
+services:
+  - type: web
+    name: safety-law-api
+    env: python
+    plan: free
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn app:app"
+    disk:
+      name: sqlite-data
+      mountPath: /var/data
+      sizeGB: 1
+    envVars:
+      - key: DB_DIR
+        value: /var/data
+      - key: ADMIN_PASSWORD
+        sync: false
+      - key: KOSHA_API_KEY
+        sync: false
+      - key: KAKAO_API_KEY
+        sync: false
+      - key: NAVER_CLIENT_ID
+        sync: false
+      - key: NAVER_CLIENT_SECRET
+        sync: false
